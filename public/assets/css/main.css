@@ -2417,6 +2417,10 @@ content: "\ea58";
     margin-right: 20px;
 }
 
+.trust-area-content .section-left-part{
+  height: 350px;
+}
+
 /* Decorative shapes behind trust content */
 .trust-decor .shape {
   position: absolute;
