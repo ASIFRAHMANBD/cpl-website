@@ -4,24 +4,29 @@
 /*======================================
     Normalize CSS
 ========================================*/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  /* font-family: "Inter", sans-serif; */
   font-weight: normal;
   font-style: normal;
   color: #888;
   overflow-x: hidden;
   font-size: 15px;
+
+   font-family: "Red Hat Display", sans-serif!important;
+  font-optical-sizing: auto;
+ 
 }
 
 p {
   margin: 0;
   padding: 0;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 24px;
 }
 
@@ -2371,7 +2376,7 @@ content: "\ea58";
   padding-bottom: 70px;
 }
 .trust-section-padding .section-hearder h1 {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 35px;
     text-align: center;
 }
@@ -2408,7 +2413,7 @@ content: "\ea58";
   margin-bottom: 25px;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #303030;
+  color: #6c757d;
 }
 .section-content-right-part {
     margin-left: 20px;
@@ -2552,10 +2557,10 @@ cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
     transform: scale(1.1);
     transition: all 0.9s ease;
      border-radius: 10px;
-     background: #298db7;
+     /* background: #298db7;
     background: linear-gradient(85deg,#298db7 20%, #298db7 70%);
     background: -webkit-linear-gradient(85deg,#298db7 20%, #298db7 70%);
-    background: -moz-linear-gradient(85deg,#298db7 20%, #298db7 70%);
+    background: -moz-linear-gradient(85deg,#298db7 20%, #298db7 70%); */
 }
 
 /* Technology Category Cards (AI, UI/UX, PM, QA) */
@@ -2570,11 +2575,18 @@ cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
   position: relative;
   overflow: hidden;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+  cursor: pointer;
+    border: 1px solid #e5e5e5;
+    transition: all .3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    box-shadow: 0 19px 50px #12204d14;
 }
 .tech-category-card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 16px 36px rgba(8,24,40,0.10);
   border-color: rgba(41,141,183,0.3);
+  transition: all .3s cubic-bezier(.445, .05, .55, .95);
+      box-shadow: none;
 }
 .tech-category-card::before {
   content: "";
@@ -2582,13 +2594,14 @@ cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
   inset: 0;
   border-radius: 12px;
   padding: 1px;
-  background: linear-gradient(135deg, #31baa9, #298DB7);
+  /* background: linear-gradient(135deg, #31baa9, #298DB7); */
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
   transition: opacity .25s ease;
   pointer-events: none;
+  
 }
 .tech-category-card:hover::before { opacity: 1; }
 .tech-category-icon {
@@ -2604,10 +2617,15 @@ cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
   box-shadow: 0 8px 18px rgba(49,186,169,0.25);
   animation: pulseGlow 4s ease-in-out infinite;
 }
-.tech-category-card h5 { font-size: 18px; margin-bottom: 6px; color: #081828; }
-.tech-category-card p { font-size: 14px; color: #4b4b4b; margin-bottom: 8px; }
-.tech-list { padding-left: 18px; margin: 0; }
-.tech-list li { font-size: 13px; color: #3c3c3c; line-height: 1.6; }
+.tech-category-card h5 { 
+font-size: 19px;
+    color: #081828;
+    margin-top: 20px;
+    margin-bottom: 10px;
+ }
+.tech-category-card p { font-size: 16px; color: #4b4b4b; margin-bottom: 8px; }
+.tech-list { padding-left: 13px; margin: 0; }
+.tech-list li { font-size: 15px; color: #3c3c3c; line-height: 1.6; }
 
 @media (max-width: 767px) {
   .tech-category-card { padding: 18px; }
@@ -2818,6 +2836,9 @@ cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
   border-radius: 24px;
   opacity: 0.07;
 }
+.service-card-service {
+    min-height: 300px;
+}
 .services-decor .shape.s1 { background:#31baa9; top: -18px; left: -28px; animation: servicesFloat1 10s ease-in-out infinite; }
 .services-decor .shape.s2 { background:#298DB7; bottom: -24px; right: -36px; animation: servicesFloat2 12s ease-in-out infinite; }
 @keyframes servicesFloat1 { 0% { transform: translateY(0); } 50% { transform: translateY(-12px) translateX(6px); } 100% { transform: translateY(0); } }
@@ -2838,7 +2859,7 @@ cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
     border-radius: 20px;
 }
 .common-btn .btn{
-  background-color:#5670d1 ;
+  background-color:#3792b5c2 ;
   padding: 4px 9px;
 }
 .common-btn .btn:hover{
@@ -4486,11 +4507,11 @@ position: absolute;
 /* services */
 
 section.service-page-body {
-    margin-bottom: 70px;
+
     position: relative;
     background: linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%);
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
 }
 .services-page-hero{
     padding: 150px 0;
@@ -4557,11 +4578,11 @@ padding-right: 30px;
   font-size: 25px;
 }
 .services-text-part-1 p{
-      font-size: 20px;
+      font-size: 19px;
     line-height: 1.34783;
     font-weight: 400;
     letter-spacing: .01em;
-        font-family: sans-serif !important;
+        /* font-family: sans-serif !important; */
     font-style: normal;
 }
 .services-text-part-1{
@@ -4619,6 +4640,16 @@ padding-right: 30px;
     border-left: 2px dashed rgba(17,52,72,.25);
     padding-left: 16px;
 }
+.margin-left-2-{
+  margin-left: -2px;
+}
+.margin-left-2{
+  margin-left: 2px;
+}
+.border-right-1{
+    border-right: 2px dashed rgba(17,52,72,.25);
+    padding-right: 16px;
+}
 /* process row gutters */
 .service-row{ --bs-gutter-x: 2rem; --bs-gutter-y: 1rem; }
 
@@ -4657,7 +4688,7 @@ padding-right: 30px;
 .service-icon-part-4-image{
   background: 0% 0% / cover, url(../images/icon/management.png);
 }
-.service-icon-part4-image:hover{
+.service-icon-part-4-image:hover{
   background: 0% 0% / cover, url(../images/icon/management-hover.png);
 }
 .service-icon-part-5-image{
@@ -4742,6 +4773,142 @@ width: 120px;
 .service-page-offer-image-4:hover{
   background: 0% 0% / cover, url(../images/icon/develop-hover.png);
 }
+
+.common-header-new{
+      padding-bottom: 40px;
+
+}
+section.services-dedicated-tech {
+    padding-bottom: 70px;
+}
+.common-header-new h1{
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.common-header-new p{
+  font-size: 19px;
+}
+.common-header-new span{
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #298DB7;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.common-card-design{
+    
+    background-color: #fff;
+    border-radius: 14px;
+    position: relative;
+    margin-top: 24px;
+    border: 1px solid rgba(8, 24, 40, 0.06);
+    /* box-shadow: 0 12px 24px rgba(8, 24, 40, 0.06); */
+    /* -webkit-transition: transform .25s ease, box-shadow .25s ease;
+    transition: transform .25s ease, box-shadow .25s ease; */
+    cursor: pointer;
+    border: 1px solid #e5e5e5;
+    transition: all .3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    box-shadow: 0 19px 50px #12204d14;
+      
+}
+.services-tech-card{
+min-height: 800px;
+
+}
+.services-tech-card-top{
+padding: 28px 26px 0px 26px;
+      border-bottom: 1px dashed #dedede;
+}
+.services-tech-card-top h1{
+  font-size: 2.3125rem;
+    line-height: 1;
+    color:#0a1526;
+    margin-bottom: 30px;
+}
+.services-tech-card-top p{
+      color: #070707;
+    font-size: 1.375rem;
+    margin-bottom: 30px;
+}
+.services-tech-card-top h3 {
+      font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0a1526;
+    margin-bottom: 20px;
+}
+.services-tech-card-top h3 sub{
+color: #5d5c5f;
+}
+.services-tech-card-top a{
+    align-items: center;
+    height: 54px;
+    line-height: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #31baa9;
+    font-weight: 500;
+    color:#fff;
+    border-radius: 60px;
+    margin-bottom: 30px;
+    font-size: 19px;
+}
+.services-tech-card-top a:hover{
+  transition: all .3s cubic-bezier(.445, .05, .55, .95);
+    background-color: #298DB7;
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(41, 141, 183, 0.35);
+}
+.services-tech-card-bottom{
+  padding: 28px 26px 0px 26px;
+}
+.services-tech-card-bottom h2{
+color: #667283;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-size: 1.125rem;
+}
+.services-tech-card-bottom p{
+     grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    color: #1a1a1a;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+}
+.services-tech-card-bottom p img{
+    margin-top: 3px;
+    margin-right: 10px;
+}
+.services-tech-card-bottom p span{
+ 
+}
+.services-tech-card:hover{
+      transition: all .3s cubic-bezier(.445, .05, .55, .95);
+      box-shadow: none;
+}
+
+.tech-category-card-img{
+border-radius: 10px;
+    height: 170px;
+    overflow: hidden;
+}
+.tech-category-card-img img{
+  width: 100%;
+  height: 100%;
+}
+
+
 
 /* End Hero Area Enhancements - removed to restore original blue background */
 /* Our Core Technologies */
