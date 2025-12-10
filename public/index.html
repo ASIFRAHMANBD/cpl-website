@@ -106,7 +106,7 @@
                                 </ul>
                             </div> <!-- navbar collapse -->
                             <div class="button add-list-button">
-                                <a href="javascript:void(0)" class="btn">Contact Us</a>
+                                <a href="contact.html" class="btn">Contact Us</a>
                             </div>
                         </nav>
                         <!-- End Navbar -->
@@ -138,36 +138,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 offset-lg-1 offset-md-1 col-12">
-                    <div class="order-1 order-lg-2 hero-img hero-image" data-aos="zoom-out" data-aos-delay="100">
-                      <div class="swiper init-swiper hero-swiper">
-                        <script type="application/json" class="swiper-config">
-                          {
-                            "speed": 800,
-                            "loop": true,
-                            "autoplay": { "delay": 3500, "disableOnInteraction": false },
-                            "parallax": true,
-                            "slidesPerView": 1,
-                            "spaceBetween": 0,
-                            "pagination": { "el": ".swiper-pagination", "clickable": true }
-                          }
-                        </script>
-                        <div class="parallax-bg" data-swiper-parallax="-30%"></div>
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <div class="slide-content" data-swiper-parallax="-120">
-                              <img src="assets/images/hero/hero-img.png" class="img-fluid" alt="Hero slide 1">
-                            </div>
-                          </div>
-                          <div class="swiper-slide">
-                            <div class="slide-content" data-swiper-parallax="-120">
-                              <img src="assets/images/hero/phone.png" class="img-fluid" alt="Hero slide 2">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
+                <div class="col-lg-5 col-md-5 offset-lg-2 offset-md-2 col-12">
+
+                    <div class=" order-1 order-lg-2 hero-img hero-image" data-aos="zoom-out" data-aos-delay="100">
+                        <img src="assets/images/hero/hero-img.png" class="img-fluid animated" alt="">
                     </div>
+                  
                 </div>
             </div>
         </div>
@@ -242,7 +218,7 @@
             </div>
 
             <!-- Feature cards -->
-            <div class="row trust-features mt-4">
+            <!-- <div class="row trust-features mt-4">
                 <div class="col-md-3 col-sm-6 mb-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-card">
                         <span class="feature-icon"><i class="lni lni-cog"></i></span>
@@ -271,7 +247,7 @@
                         <p>Long-term partnership with maintenance and optimization.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </Section>
 
@@ -799,12 +775,281 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
     </Section>
 
     <!-- End our-core-technology -->
+
+    <!-- AI Projects Showcase Section -->
+    <style>
+      @keyframes float-up {
+        0% { transform: translateY(0px); opacity: 0; }
+        100% { transform: translateY(-20px); opacity: 1; }
+      }
+      @keyframes glow-pulse {
+        0%, 100% { box-shadow: 0 5px 25px rgba(0,0,0,0.08), 0 0 20px rgba(49, 186, 169, 0); }
+        50% { box-shadow: 0 10px 35px rgba(0,0,0,0.12), 0 0 30px rgba(49, 186, 169, 0.3); }
+      }
+      @keyframes icon-rotate {
+        0% { transform: rotate(0deg) scale(1); }
+        50% { transform: rotate(180deg) scale(1.1); }
+        100% { transform: rotate(360deg) scale(1); }
+      }
+      @keyframes border-glow {
+        0%, 100% { border-top-color: #31baa9; }
+        50% { border-top-color: #298DB7; }
+      }
+      @keyframes slide-in-text {
+        0% { transform: translateX(-30px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes blob-float {
+        0%, 100% { transform: translate(0, 0); }
+        33% { transform: translate(30px, -30px); }
+        66% { transform: translate(-20px, 20px); }
+      }
+      @keyframes bubble-rise {
+        0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+      }
+      @keyframes water-wave {
+        0%, 100% { transform: translateY(0); }
+        25% { transform: translateY(-15px); }
+        50% { transform: translateY(-5px); }
+        75% { transform: translateY(-12px); }
+      }
+      @keyframes grid-pulse {
+        0%, 100% { opacity: 0.08; }
+        50% { opacity: 0.15; }
+      }
+      @keyframes line-move {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100vh); }
+      }
+      .ai-card-hover:hover {
+        animation: glow-pulse 2s ease-in-out;
+        transform: translateY(-10px) !important;
+      }
+      .ai-card-hover:hover .icon-box {
+        animation: icon-rotate 0.6s ease-in-out;
+      }
+      .ai-section-blob-1 {
+        animation: blob-float 6s ease-in-out infinite;
+      }
+      .ai-section-blob-2 {
+        animation: blob-float 8s ease-in-out 2s infinite;
+      }
+      .ai-grid-bg {
+        animation: grid-pulse 3s ease-in-out infinite;
+      }
+      .ai-accent-line {
+        animation: line-move 20s linear infinite;
+      }
+      .ai-glow-element {
+        background: radial-gradient(circle, rgba(49, 186, 169, 0.35) 0%, transparent 70%);
+        filter: blur(80px);
+      }
+      .ai-bubble-large {
+        animation: bubble-rise 8s ease-in infinite;
+        border: 2px solid rgba(49, 186, 169, 0.15);
+        background: radial-gradient(ellipse at 30% 30%, rgba(49, 186, 169, 0.2), transparent);
+        border-radius: 50%;
+      }
+      .ai-bubble-medium {
+        animation: bubble-rise 10s ease-in infinite;
+        border: 1.5px solid rgba(41, 141, 183, 0.12);
+        background: radial-gradient(ellipse at 30% 30%, rgba(41, 141, 183, 0.15), transparent);
+        border-radius: 50%;
+      }
+      .ai-water-effect {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(180deg, transparent 0%, rgba(49, 186, 169, 0.05) 50%, rgba(41, 141, 183, 0.08) 100%);
+        animation: water-wave 4s ease-in-out infinite;
+      }
+    </style>
+    <section class="ai-projects-showcase padding-50" style="background: linear-gradient(180deg, #ffffff 0%, #f8fafb 50%, #ffffff 100%); position: relative; overflow: hidden; min-height: 100vh;">
+      <!-- Grid Background Pattern -->
+      <div class="ai-grid-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: 
+        linear-gradient(0deg, transparent 24%, rgba(49, 186, 169, 0.05) 25%, rgba(49, 186, 169, 0.05) 26%, transparent 27%, transparent 74%, rgba(49, 186, 169, 0.05) 75%, rgba(49, 186, 169, 0.05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(49, 186, 169, 0.05) 25%, rgba(49, 186, 169, 0.05) 26%, transparent 27%, transparent 74%, rgba(49, 186, 169, 0.05) 75%, rgba(49, 186, 169, 0.05) 76%, transparent 77%, transparent);
+        background-size: 80px 80px; pointer-events: none;"></div>
+
+      <!-- Animated Glowing Elements (Larger) -->
+      <div class="ai-glow-element" style="position: absolute; top: 5%; right: 2%; width: 700px; height: 700px;"></div>
+      <div class="ai-glow-element" style="position: absolute; bottom: 10%; left: -5%; width: 600px; height: 600px; animation: blob-float 10s ease-in-out infinite;"></div>
+      <div class="ai-glow-element" style="position: absolute; top: 45%; right: 10%; width: 500px; height: 500px; animation: blob-float 8s ease-in-out 3s infinite;"></div>
+
+      <!-- Large Floating Bubbles -->
+      <div class="ai-bubble-large" style="position: absolute; bottom: -50px; left: 8%; width: 220px; height: 220px; animation-delay: 0s;"></div>
+      <div class="ai-bubble-large" style="position: absolute; bottom: -100px; right: 12%; width: 280px; height: 280px; animation-delay: 2s;"></div>
+      <div class="ai-bubble-medium" style="position: absolute; bottom: -80px; left: 45%; width: 180px; height: 180px; animation-delay: 1s;"></div>
+      <div class="ai-bubble-large" style="position: absolute; bottom: -60px; right: 25%; width: 240px; height: 240px; animation-delay: 3s;"></div>
+      <div class="ai-bubble-medium" style="position: absolute; bottom: -90px; left: 20%; width: 160px; height: 160px; animation-delay: 4s;"></div>
+      <div class="ai-bubble-large" style="position: absolute; bottom: -70px; right: 5%; width: 200px; height: 200px; animation-delay: 2.5s;"></div>
+
+      <!-- Floating Particles -->
+      <div style="position: absolute; top: 20%; left: 10%; width: 12px; height: 12px; background: #31baa9; border-radius: 50%; opacity: 0.4; animation: blob-float 12s ease-in-out infinite;"></div>
+      <div style="position: absolute; top: 40%; right: 8%; width: 10px; height: 10px; background: #298DB7; border-radius: 50%; opacity: 0.4; animation: blob-float 15s ease-in-out 2s infinite;"></div>
+      <div style="position: absolute; bottom: 30%; left: 15%; width: 14px; height: 14px; background: #31baa9; border-radius: 50%; opacity: 0.3; animation: blob-float 18s ease-in-out 1s infinite;"></div>
+      <div style="position: absolute; top: 60%; right: 20%; width: 9px; height: 9px; background: #298DB7; border-radius: 50%; opacity: 0.35; animation: blob-float 16s ease-in-out 4s infinite;"></div>
+
+      <!-- Water Effect -->
+      <div class="ai-water-effect"></div>
+
+      <!-- Top Accent Line -->
+      <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(to bottom, transparent, rgba(49, 186, 169, 0.2), transparent); pointer-events: none;"></div>
+
+      <!-- Gradient Borders -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(49, 186, 169, 0.3), transparent); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(41, 141, 183, 0.3), transparent); pointer-events: none;"></div>
+      
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-hearder text-center" data-aos="fade-up" data-aos-delay="50">
+              <h1 class="common-heading-color-1">AI-Powered Solutions</h1>
+              <span></span>
+              <div class="row">
+                <div class="col-lg-9 m-auto col-12">
+                  <p class="text-center" style="font-size: 18px; color: #666; font-weight: 500;">We specialize in building intelligent systems using cutting-edge AI, LLM, and vector database technologies. From RAG systems to multi-agent AI applications.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 50px;">
+          <!-- AI Project Card 1: RAG Application -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="ai-project-card ai-card-hover" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; border-top: 4px solid #31baa9; height: 100%; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(49, 186, 169, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+              <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative; z-index: 1;">
+                <div class="icon-box" style="width: 60px; height: 60px; background: linear-gradient(135deg, #31baa9, #298DB7); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 15px; transition: all 0.3s ease;">
+                  <i class="fa-solid fa-search"></i>
+                </div>
+                <h4 style="margin: 0; color: #1a1a1a; animation: slide-in-text 0.6s ease;">Retrieval Augmented Generation</h4>
+              </div>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; position: relative; z-index: 1;">Build intelligent document search and Q&A systems that combine LLMs with vector databases for accurate, context-aware responses.</p>
+              <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 1;">
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.1s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>LangChain + OpenAI/Claude</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.2s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Pinecone/Weaviate Vector DB</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.3s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Semantic Search & Retrieval</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Project Card 2: Multi-Agent Systems -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="ai-project-card ai-card-hover" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; border-top: 4px solid #31baa9; height: 100%; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(49, 186, 169, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+              <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative; z-index: 1;">
+                <div class="icon-box" style="width: 60px; height: 60px; background: linear-gradient(135deg, #31baa9, #298DB7); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 15px; transition: all 0.3s ease;">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <h4 style="margin: 0; color: #1a1a1a; animation: slide-in-text 0.6s ease;">Agentic AI Systems</h4>
+              </div>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; position: relative; z-index: 1;">Deploy autonomous agent teams that collaborate to solve complex tasks with reasoning, planning, and tool use capabilities.</p>
+              <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 1;">
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.1s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>CrewAI & AutoGen Frameworks</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.2s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Multi-Agent Orchestration</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.3s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Task Automation & Workflows</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Project Card 3: LLM Applications -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="ai-project-card ai-card-hover" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; border-top: 4px solid #31baa9; height: 100%; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(49, 186, 169, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+              <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative; z-index: 1;">
+                <div class="icon-box" style="width: 60px; height: 60px; background: linear-gradient(135deg, #31baa9, #298DB7); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 15px; transition: all 0.3s ease;">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h4 style="margin: 0; color: #1a1a1a; animation: slide-in-text 0.6s ease;">LLM Integration</h4>
+              </div>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; position: relative; z-index: 1;">Integrate powerful language models into your applications with custom fine-tuning, prompt engineering, and production-ready pipelines.</p>
+              <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 1;">
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.1s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>OpenAI, Claude, Hugging Face</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.2s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Custom Model Fine-tuning</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.3s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Prompt Optimization & Testing</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Project Card 4: Vector Search & Embeddings -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="ai-project-card ai-card-hover" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; border-top: 4px solid #31baa9; height: 100%; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(49, 186, 169, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+              <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative; z-index: 1;">
+                <div class="icon-box" style="width: 60px; height: 60px; background: linear-gradient(135deg, #31baa9, #298DB7); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 15px; transition: all 0.3s ease;">
+                  <i class="fa-solid fa-cube"></i>
+                </div>
+                <h4 style="margin: 0; color: #1a1a1a; animation: slide-in-text 0.6s ease;">Vector Databases</h4>
+              </div>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; position: relative; z-index: 1;">Store, index, and search high-dimensional vector data at scale for semantic search, similarity matching, and recommendation systems.</p>
+              <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 1;">
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.1s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Pinecone, Weaviate, Milvus</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.2s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Semantic Search Implementation</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.3s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Recommendation Engines</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Project Card 5: Chatbots & Conversational AI -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="ai-project-card ai-card-hover" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; border-top: 4px solid #31baa9; height: 100%; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(49, 186, 169, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+              <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative; z-index: 1;">
+                <div class="icon-box" style="width: 60px; height: 60px; background: linear-gradient(135deg, #31baa9, #298DB7); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 15px; transition: all 0.3s ease;">
+                  <i class="fa-solid fa-comments"></i>
+                </div>
+                <h4 style="margin: 0; color: #1a1a1a; animation: slide-in-text 0.6s ease;">Conversational AI</h4>
+              </div>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; position: relative; z-index: 1;">Build intelligent chatbots, voice assistants, and conversational interfaces that understand context and provide human-like interactions.</p>
+              <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 1;">
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.1s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Intelligent Chatbots</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.2s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Context Awareness & Memory</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.3s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Multi-turn Conversations</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Project Card 6: Data Intelligence -->
+          <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="350">
+            <div class="ai-project-card ai-card-hover" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; border-top: 4px solid #31baa9; height: 100%; position: relative; overflow: hidden;">
+              <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(49, 186, 169, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+              <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative; z-index: 1;">
+                <div class="icon-box" style="width: 60px; height: 60px; background: linear-gradient(135deg, #31baa9, #298DB7); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 15px; transition: all 0.3s ease;">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h4 style="margin: 0; color: #1a1a1a; animation: slide-in-text 0.6s ease;">ML & Data Intelligence</h4>
+              </div>
+              <p style="color: #666; line-height: 1.6; margin-bottom: 15px; position: relative; z-index: 1;">Leverage machine learning models for predictive analytics, classification, clustering, and data-driven insights at enterprise scale.</p>
+              <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 1;">
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.1s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Predictive Analytics Models</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.2s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Data Pipelines & MLOps</li>
+                <li style="padding: 8px 0; color: #555; font-size: 14px; animation: slide-in-text 0.7s ease 0.3s backwards;"><i class="fa-solid fa-check" style="color: #31baa9; margin-right: 10px;"></i>Real-time Insights & Dashboards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="row" style="margin-top: 60px;">
+          <div class="col-12 text-center">
+            <p style="font-size: 18px; color: #666; margin-bottom: 25px; animation: slide-in-text 0.6s ease;">Ready to transform your business with AI? Let's discuss your AI project needs.</p>
+            <a href="contact.html" class="btn" style="background: linear-gradient(135deg, #31baa9, #298DB7); border: none; padding: 15px 40px; font-size: 16px; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(49, 186, 169, 0.3);" onmouseover="this.style.boxShadow='0 8px 25px rgba(49, 186, 169, 0.5)'; this.style.transform='scale(1.05)';" onmouseout="this.style.boxShadow='0 5px 15px rgba(49, 186, 169, 0.3)'; this.style.transform='scale(1)';">Start Your AI Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Tech Categories: AI, UI/UX, PM, QA -->
     <section class="our-core-technology padding-50" aria-label="Technology Categories">
@@ -830,13 +1075,17 @@
         <div class="row category-grid">
           <div class="col-lg-3 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="120">
             <div class="tech-category-card">
-              <div class="tech-category-icon" aria-hidden="true">
-                <!-- AI Icon -->
+              <!-- <div class="tech-category-icon" aria-hidden="true">
+               
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" opacity="0.9"/>
                   <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 </svg>
+              </div> -->
+              <div class="tech-category-card-img">
+                    <img src="assets/images/others/The-Role-of-AI-in-Data-Interpretation.png" alt="" class="img-fluid">
               </div>
+              
               <h5>AI & Data</h5>
               <p>Applied intelligence for smarter products and operations.</p>
               <ul class="tech-list">
@@ -844,7 +1093,7 @@
                 <li>Chatbots, recommendations, RAG</li>
                 <li>Data pipelines and analytics</li>
               </ul>
-              <div class="tech-visual" data-aos="fade-in" data-aos-delay="150">
+              <!-- <div class="tech-visual" data-aos="fade-in" data-aos-delay="150">
                 <svg viewBox="0 0 200 64" class="tech-chart" role="img" aria-label="AI data trend line chart">
                   <defs>
                     <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
@@ -854,18 +1103,21 @@
                   </defs>
                   <path d="M0 50 L20 40 L40 42 L60 30 L80 35 L100 20 L120 25 L140 18 L160 24 L180 14 L200 10" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="chart-line"/>
                 </svg>
-              </div>
+              </div> -->
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="160">
             <div class="tech-category-card">
-              <div class="tech-category-icon" aria-hidden="true">
-                <!-- UI/UX Icon -->
+              <!-- <div class="tech-category-icon" aria-hidden="true">
+                
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="4" y="5" width="16" height="14" rx="3" stroke="white" stroke-width="2"/>
                   <path d="M7 9h6M7 13h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 </svg>
+              </div> -->
+              <div class="tech-category-card-img">
+                    <img src="assets/images/others/pngtree-ui-ux-development-design.png" alt="" class="img-fluid">
               </div>
               <h5>UI/UX Design</h5>
               <p>Human-centered experiences that convert and delight.</p>
@@ -874,19 +1126,22 @@
                 <li>Design systems and accessibility</li>
                 <li>Motion and micro-interactions</li>
               </ul>
-              <div class="tech-visual" data-aos="fade-in" data-aos-delay="190">
+              <!-- <div class="tech-visual" data-aos="fade-in" data-aos-delay="190">
                 <img src="assets/images/others/innovation-2.png" alt="UI design illustration" class="tech-visual-img" />
-              </div>
+              </div> -->
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="200">
             <div class="tech-category-card">
-              <div class="tech-category-icon" aria-hidden="true">
-                <!-- PM Icon -->
+              <!-- <div class="tech-category-icon" aria-hidden="true">
+                
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 </svg>
+              </div> -->
+              <div class="tech-category-card-img">
+                    <img src="assets/images/others/AdobeStock_170135481.webp" alt="" class="img-fluid">
               </div>
               <h5>Project Management</h5>
               <p>Predictable delivery with agile workflows and governance.</p>
@@ -895,24 +1150,27 @@
                 <li>Stakeholder comms and risk control</li>
                 <li>Metrics: velocity, burndown, DORA</li>
               </ul>
-              <div class="tech-visual" data-aos="fade-in" data-aos-delay="230">
+              <!-- <div class="tech-visual" data-aos="fade-in" data-aos-delay="230">
                 <svg viewBox="0 0 200 64" class="tech-chart" role="img" aria-label="Project plan gantt bars">
                   <rect x="10" y="10" width="80" height="12" rx="6" class="bar b1"/>
                   <rect x="50" y="28" width="110" height="12" rx="6" class="bar b2"/>
                   <rect x="30" y="46" width="70" height="12" rx="6" class="bar b3"/>
                 </svg>
-              </div>
+              </div> -->
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="240">
             <div class="tech-category-card">
-              <div class="tech-category-icon" aria-hidden="true">
-                <!-- QA Icon -->
+              <!-- <div class="tech-category-icon" aria-hidden="true">
+              
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <rect x="4" y="4" width="16" height="16" rx="3" stroke="white" stroke-width="2" opacity="0.9"/>
                 </svg>
+              </div> -->
+              <div class="tech-category-card-img">
+                    <img src="assets/images/others/role-of-qa-in-quality-management.jpg" alt="" class="img-fluid">
               </div>
               <h5>Quality Assurance</h5>
               <p>Reliability first: automated tests and robust CI/CD.</p>
@@ -921,7 +1179,7 @@
                 <li>Security and accessibility checks</li>
                 <li>CI/CD pipelines and coverage</li>
               </ul>
-              <div class="tech-visual" data-aos="fade-in" data-aos-delay="270">
+              <!-- <div class="tech-visual" data-aos="fade-in" data-aos-delay="270">
                 <svg viewBox="0 0 64 64" class="tech-gauge" role="img" aria-label="QA coverage gauge">
                   <defs>
                     <linearGradient id="gGrad" x1="0" y1="0" x2="1" y2="0">
@@ -932,7 +1190,7 @@
                   <circle cx="32" cy="32" r="26" stroke="#e6eef5" stroke-width="6" fill="none"/>
                   <circle cx="32" cy="32" r="26" stroke="url(#gGrad)" stroke-width="6" fill="none" stroke-linecap="round" class="gauge-ring"/>
                 </svg>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -1206,7 +1464,7 @@
                                     <img src="assets/images/logo/logo.png" class="image-fluid" alt="#">
                                 </a>
                             </div>
-                            <p>Diam venenatis lacus leo. sapien sollicitudin. sit enim. scelerisque nisi Ut sit convallis. ipsum porta dolor viverra tincidunt Donec non ultrices felis, dolor Donec dignissim, gravida viverra ex Donec Nullam consectetur tortor.</p>
+                            <p>Cloud Production LTD is a trusted name in software development, known for delivering high-quality, scalable, and reliable digital solutions tailored to your business needs.</p>
                             <ul class="social">
                                 <li><a href="https://www.facebook.com/cloudproductionltd/"><i class="lni lni-facebook-filled"></i></a></li>
                                 <!-- <li><a href="#"><i class="lni lni-twitter-original"></i></a></li> -->
