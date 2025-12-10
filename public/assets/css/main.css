@@ -4907,6 +4907,15 @@ border-radius: 10px;
   width: 100%;
   height: 100%;
 }
+.services-dedicated-tech::before{
+      content: "";
+    position: absolute;
+    inset: -10% -10% -20% -10%;
+    background: radial-gradient(60% 60% at 10% 20%, rgba(49, 186, 169, 0.20) 0%, rgba(49, 186, 169, 0) 60%), radial-gradient(50% 50% at 90% 10%, rgba(41, 141, 183, 0.18) 0%, rgba(41, 141, 183, 0) 60%);
+    z-index: 0;
+    animation: trustGradientShift 16s 
+ease-in-out infinite alternate;
+}
 
 
 
