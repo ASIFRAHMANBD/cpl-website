@@ -2998,8 +2998,8 @@ font-size: 19px;
 
 .portfolio .portfolio-item {
   position: relative;
-    min-height: 270px;
-    max-height: 270px;
+    min-height: 370px;
+    max-height: 370px;
     overflow: hidden;
     box-shadow: 9px -14px 18px 2px rgb(6 9 12 / 20%);
     border-radius: 10px;
