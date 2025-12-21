@@ -259,6 +259,25 @@
           }
       });
     }
+    // Client carousel (guard for jQuery presence)
+    if (window.jQuery && $('.solution-carousel').length) {
+      $('.solution-carousel').owlCarousel({
+          autoplay: true,
+          autoplayTimeout: 2500,
+          autoplayHoverPause: true,
+          smartSpeed: 700,
+          loop: true,
+          nav: false,
+          dots: false,
+          margin: 12,
+          responsive: {
+            0: { items: 2 },
+            576: { items: 3 },
+            992: { items: 4 }
+          }
+      });
+    }
+
 
 
 
