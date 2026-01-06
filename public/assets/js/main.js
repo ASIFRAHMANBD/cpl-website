@@ -209,6 +209,46 @@
 
   });
 
+
+   /**
+   * Init isotope layout and filters solutions
+   */
+   
+  document.querySelectorAll('.isotope-layout-solutions').forEach(function(isotopeItem) {
+
+    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+
+    let initIsotope;
+    imagesLoaded(isotopeItem.querySelector('.isotope-container-solutions'), function() {
+      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container-solutions'), {
+        itemSelector: '.isotope-item-solutions',
+        layoutMode: layout,
+        filter: filter,
+        sortBy: sort
+      });
+    });
+
+    isotopeItem.querySelectorAll('.isotope-filters-solutions li').forEach(function(filters) {
+  //  alert(filters);
+      filters.addEventListener('click', function() {
+        
+        
+        isotopeItem.querySelector('.isotope-filters-solutions .filter-active').classList.remove('filter-active');
+        this.classList.add('filter-active');
+        initIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        if (typeof aosInit === 'function') {
+          aosInit();
+        }
+      }, false);
+    });
+
+  });
+
+
   /**
    * Init swiper sliders
    */
@@ -265,14 +305,14 @@
           autoplay: true,
           autoplayTimeout: 2500,
           autoplayHoverPause: true,
-          smartSpeed: 700,
+          smartSpeed: 900,
           loop: true,
           nav: false,
           dots: false,
           margin: 12,
           responsive: {
-            0: { items: 2 },
-            576: { items: 3 },
+            0: { items: 1 },
+            576: { items: 2 },
             992: { items: 4 }
           }
       });
