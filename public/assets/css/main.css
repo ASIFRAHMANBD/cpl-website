@@ -3004,6 +3004,10 @@ font-size: 19px;
     margin: 0 5px;
   }
 }
+.portfolio-index.portfolio .portfolio-item .isotope-item-content{
+      min-height: 320px;
+    max-height: 320px;
+}
 
 .portfolio .portfolio-item .isotope-item-content{
   position: relative;
@@ -3516,7 +3520,7 @@ section.client-part::before{
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(8,24,40,0.06);
-  min-width: 180px;
+  min-width: 120px;
   min-height: 120px;
   margin: 16px;
   border: 1px solid rgba(8,24,40,0.06);
@@ -5184,11 +5188,15 @@ ease-in-out infinite alternate;
 }
 
 /* solutions */
+.sotution-page-body{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 .solutions-filters {
     position: relative;
     width: 400px;
     height: 400px;
-    border: 2px solid #000;
+    border: 2px solid #31baa9;
     margin-top: 30px;
     border-radius: 50%;
 }
@@ -5196,11 +5204,15 @@ ease-in-out infinite alternate;
     position: absolute;
     width: 90px;
     height: 70px;
-    background-color: goldenrod;
+    background-color: #31baa9;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+        color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
 }
 .solutions-filters li:nth-child(1){
     top: 15%;
@@ -5225,6 +5237,24 @@ ease-in-out infinite alternate;
 .solutions-filters li:nth-child(6){
     top: 70%;
     left: 58%;
+}
+.isotope-item-content img{
+  padding:5px 15px;
+}
+.isotope-item-content-text h2{
+      font-size: 28px;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.header-title-common .isotope-item-content-text p{
+      font-size: 18px !important;
+    text-align: left;
+}
+.isotope-item-content-text {}
+.solutions-filters li.filter-active{
+  background-color: #298DB7;
 }
 /* Responsive Adjustments */
 @media (max-width: 992px) {
