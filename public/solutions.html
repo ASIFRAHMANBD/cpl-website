@@ -22,6 +22,396 @@
       <link href="assets/css/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
+    
+    <!-- Modern Solutions Custom Styles -->
+    <style>
+        .modern-solutions-section {
+            padding: 120px 0;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solutions-header {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, #00d4ff 0%, #5b73f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .solutions-navigation {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .nav-wrapper {
+            background: #f8f9ff;
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #e1e5e9;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .solution-nav-item {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e1e5e9;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .solution-nav-item:hover::before {
+            left: 100%;
+        }
+        
+        .solution-nav-item:hover {
+            transform: translateX(10px);
+            background: #f0f4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+        }
+        
+        .solution-nav-item.active {
+            background: #f0f4ff;
+            transform: translateX(10px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+        
+        .nav-icon {
+            width: 60px;
+            height: 60px;
+            background: #e8f0ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-icon i {
+            font-size: 1.5rem;
+            color: #00d4ff;
+        }
+        
+        .solution-nav-item:hover .nav-icon {
+            transform: rotate(360deg);
+            background: #00d4ff;
+        }
+        
+        .solution-nav-item:hover .nav-icon i {
+            color: white;
+        }
+        
+        .nav-content h4 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+        
+        .nav-content span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .nav-arrow {
+            margin-left: auto;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+        
+        .solution-nav-item:hover .nav-arrow {
+            transform: translateX(5px);
+            color: #00d4ff;
+        }
+        
+        .solutions-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .solution-content-item {
+            display: none;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s ease;
+        }
+        
+        .solution-content-item.active {
+            display: block;
+            animation: slideInRight 0.6s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .content-wrapper {
+            padding: 0;
+        }
+        
+        .solution-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .solution-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .solution-content-item:hover .solution-image img {
+            transform: scale(1.05);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.8) 0%, rgba(91, 115, 240, 0.8) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .solution-content-item:hover .image-overlay {
+            opacity: 1;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: translateY(20px);
+            animation: slideUpBadge 0.6s ease forwards;
+        }
+        
+        .tech-badge:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .tech-badge:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        @keyframes slideUpBadge {
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-details {
+            padding: 2.5rem;
+        }
+        
+        .solution-details h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d4ff 0%, #5b73f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .solution-details p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .feature-item i {
+            color: #28a745;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .cta-section {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #00d4ff 0%, #5b73f0 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+        
+        .btn-outline {
+            border-color: #00d4ff;
+            color: #00d4ff;
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: #00d4ff;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-wrapper {
+                margin-bottom: 2rem;
+            }
+            
+            .solution-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .modern-solutions-section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .solution-nav-item {
+                padding: 1rem;
+            }
+            
+            .nav-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .solution-details {
+                padding: 1.5rem;
+            }
+            
+            .cta-section {
+                flex-direction: column;
+            }
+            
+            .btn {
+                text-align: center;
+            }
+        }
+        
+        /* Loading Animation */
+        .solutions-navigation,
+        .solutions-content {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .solutions-content {
+            animation-delay: 0.3s;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 
 </head>
 
@@ -121,101 +511,337 @@
     </section>
 
 
-    <!-- Contact-us page body -->
-    <section class="sotution-page-body">
-        <div class="container-fluid">
+    <!-- Solutions Interactive Section -->
+    <section class="modern-solutions-section">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-11 col-md-11 col-12 m-auto">
-                    <div class="solution-part header-title-common text-center">
-
-                       <div class="isotope-layout-solutions" data-default-filter=".filter-web" data-layout="masonry" data-sort="original-order">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <ul class="solutions-filters isotope-filters-solutions" data-aos="fade-up" data-aos-delay="100">
-                                        <!-- <li data-filter="*" class="filter-active">All</li> -->
-                                        <li data-filter=".filter-web" class="filter-active">Dev</li>
-                                        <li data-filter=".filter-app">Apps</li>
-                                        <li data-filter=".filter-game">Game</li>
-                                        <li data-filter=".filter-web" >Web</li>
-                                        <li data-filter=".filter-app">Apps</li>
-                                        <li data-filter=".filter-game">Game</li>
-                                    </ul>
+                <div class="col-lg-12">
+                    <div class="solutions-header text-center mb-5" data-aos="fade-up">
+                        <h2 class="section-title">Our <span class="text-gradient">Digital Solutions</span></h2>
+                        <p class="section-subtitle">Explore our comprehensive range of technology solutions designed to transform your business</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-0">
+                <!-- Solutions Navigation -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="solutions-navigation" data-aos="fade-right" data-aos-delay="100">
+                        <div class="nav-wrapper">
+                            <div class="solution-nav-item active" data-target="web-development" data-bg="#667eea">
+                                <div class="nav-icon">
+                                    <i class="fas fa-code"></i>
                                 </div>
-
-
-                            
-                            
-
-                                <div class="col-lg-8 gy-4 isotope-container-solutions" data-aos="fade-up" data-aos-delay="200">
-
-                                    
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 portfolio-item isotope-item-solutions filter-web">
-                                            <div class="row">
-                                                <div class="col-lg-6 ">
-                                                    <div class="isotope-item-content">
-                                                        <img src="assets/images/portfolio/Elmi_Laboratory.png" class="img-fluid" alt="">
-                                                    </div> 
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="isotope-item-content-text">
-                                                        <h2>New Features </h2>
-                                                        <p>We understand that you have some ideas and want some features to be included in your solutions and so we customize your tool according to your demand and requirement. You get exactly what you need in order to boost the functionality of your business process.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>        
-                                            
-                                    </div><!-- End Portfolio Item -->
-
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 portfolio-item isotope-item-solutions filter-app">
-                                            <div class="row">
-                                                <div class="col-lg-6 ">
-                                                    <div class="isotope-item-content">
-                                                        <img src="assets/images/portfolio/ID_check.png" class="img-fluid" alt="">
-                                                    </div> 
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="isotope-item-content-text">
-                                                        <h2>New Features </h2>
-                                                        <p>We understand that you have some ideas and want some features to be included in your solutions and so we customize your tool according to your demand and requirement. You get exactly what you need in order to boost the functionality of your business process.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>        
-                                            
-                                    </div><!-- End Portfolio Item -->
-
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 portfolio-item isotope-item-solutions filter-game">
-                                            <div class="row">
-                                                <div class="col-lg-6 ">
-                                                    <div class="isotope-item-content">
-                                                        <img src="assets/images/portfolio/word game.png" class="img-fluid" alt="">
-                                                    </div> 
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="isotope-item-content-text">
-                                                        <h2>New Features </h2>
-                                                        <p>We understand that you have some ideas and want some features to be included in your solutions and so we customize your tool according to your demand and requirement. You get exactly what you need in order to boost the functionality of your business process.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>        
-                                            
-                                    </div><!-- End Portfolio Item -->
-
+                                <div class="nav-content">
+                                    <h4>Web Development</h4>
+                                    <span>Modern & Responsive</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <i class="fas fa-chevron-right"></i>
                                 </div>
                             </div>
-                           
-
+                            
+                            <div class="solution-nav-item" data-target="mobile-apps" data-bg="#764ba2">
+                                <div class="nav-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="nav-content">
+                                    <h4>Mobile Apps</h4>
+                                    <span>iOS & Android</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-nav-item" data-target="game-development" data-bg="#f093fb">
+                                <div class="nav-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <div class="nav-content">
+                                    <h4>Game Development</h4>
+                                    <span>Interactive & Engaging</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-nav-item" data-target="cloud-solutions" data-bg="#4facfe">
+                                <div class="nav-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="nav-content">
+                                    <h4>Cloud Solutions</h4>
+                                    <span>Scalable & Secure</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-nav-item" data-target="ai-solutions" data-bg="#43e97b">
+                                <div class="nav-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="nav-content">
+                                    <h4>AI Solutions</h4>
+                                    <span>Smart & Automated</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-nav-item" data-target="data-analytics" data-bg="#fa709a">
+                                <div class="nav-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="nav-content">
+                                    <h4>Data Analytics</h4>
+                                    <span>Insights & Intelligence</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solutions Content -->
+                <div class="col-lg-7 col-md-6">
+                    <div class="solutions-content" data-aos="fade-left" data-aos-delay="200">
+                        <!-- Web Development Content -->
+                        <div class="solution-content-item active" id="web-development">
+                            <div class="content-wrapper">
+                                <div class="solution-image">
+                                    <img src="assets/images/portfolio/Elmi_Laboratory.png" alt="Web Development" class="img-fluid">
+                                    <div class="image-overlay">
+                                        <div class="tech-stack">
+                                            <span class="tech-badge">React</span>
+                                            <span class="tech-badge">Node.js</span>
+                                            <span class="tech-badge">Next.js</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solution-details">
+                                    <h3>Custom Web Development</h3>
+                                    <p>We create modern, responsive websites and web applications that deliver exceptional user experiences. Our solutions are built with cutting-edge technologies to ensure optimal performance, scalability, and security.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Responsive Design</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Progressive Web Apps</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>E-commerce Solutions</span>
+                                        </div>
+                                    </div>
+                                    <div class="cta-section">
+                                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                        <a href="portfolio.html" class="btn btn-outline">View Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Apps Content -->
+                        <div class="solution-content-item" id="mobile-apps">
+                            <div class="content-wrapper">
+                                <div class="solution-image">
+                                    <img src="assets/images/portfolio/ID_check.png" alt="Mobile Apps" class="img-fluid">
+                                    <div class="image-overlay">
+                                        <div class="tech-stack">
+                                            <span class="tech-badge">React Native</span>
+                                            <span class="tech-badge">Flutter</span>
+                                            <span class="tech-badge">Swift</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solution-details">
+                                    <h3>Mobile App Development</h3>
+                                    <p>Transform your ideas into powerful mobile applications for iOS and Android platforms. We build native and cross-platform apps that provide seamless user experiences and robust functionality.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Cross-Platform Development</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Native Performance</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>App Store Optimization</span>
+                                        </div>
+                                    </div>
+                                    <div class="cta-section">
+                                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                        <a href="portfolio.html" class="btn btn-outline">View Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Game Development Content -->
+                        <div class="solution-content-item" id="game-development">
+                            <div class="content-wrapper">
+                                <div class="solution-image">
+                                    <img src="assets/images/portfolio/word game.png" alt="Game Development" class="img-fluid">
+                                    <div class="image-overlay">
+                                        <div class="tech-stack">
+                                            <span class="tech-badge">Unity</span>
+                                            <span class="tech-badge">Unreal</span>
+                                            <span class="tech-badge">C#</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solution-details">
+                                    <h3>Interactive Game Development</h3>
+                                    <p>Create engaging and immersive gaming experiences across multiple platforms. From mobile games to desktop applications, we bring your gaming vision to life with cutting-edge technology.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Multi-platform Games</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>3D Graphics & Animation</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Multiplayer Integration</span>
+                                        </div>
+                                    </div>
+                                    <div class="cta-section">
+                                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                        <a href="portfolio.html" class="btn btn-outline">View Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cloud Solutions Content -->
+                        <div class="solution-content-item" id="cloud-solutions">
+                            <div class="content-wrapper">
+                                <div class="solution-image">
+                                    <img src="assets/images/portfolio/Elmi_Laboratory.png" alt="Cloud Solutions" class="img-fluid">
+                                    <div class="image-overlay">
+                                        <div class="tech-stack">
+                                            <span class="tech-badge">AWS</span>
+                                            <span class="tech-badge">Azure</span>
+                                            <span class="tech-badge">Docker</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solution-details">
+                                    <h3>Cloud Infrastructure Solutions</h3>
+                                    <p>Leverage the power of cloud computing to scale your business operations. We provide comprehensive cloud solutions including migration, deployment, and management services.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Cloud Migration</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Serverless Architecture</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>DevOps Integration</span>
+                                        </div>
+                                    </div>
+                                    <div class="cta-section">
+                                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                        <a href="portfolio.html" class="btn btn-outline">View Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Solutions Content -->
+                        <div class="solution-content-item" id="ai-solutions">
+                            <div class="content-wrapper">
+                                <div class="solution-image">
+                                    <img src="assets/images/portfolio/ID_check.png" alt="AI Solutions" class="img-fluid">
+                                    <div class="image-overlay">
+                                        <div class="tech-stack">
+                                            <span class="tech-badge">Python</span>
+                                            <span class="tech-badge">TensorFlow</span>
+                                            <span class="tech-badge">OpenAI</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solution-details">
+                                    <h3>Artificial Intelligence Solutions</h3>
+                                    <p>Harness the power of AI to automate processes, gain insights, and drive innovation. We develop custom AI solutions including machine learning models and intelligent automation systems.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Machine Learning</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Natural Language Processing</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Computer Vision</span>
+                                        </div>
+                                    </div>
+                                    <div class="cta-section">
+                                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                        <a href="portfolio.html" class="btn btn-outline">View Projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Analytics Content -->
+                        <div class="solution-content-item" id="data-analytics">
+                            <div class="content-wrapper">
+                                <div class="solution-image">
+                                    <img src="assets/images/portfolio/word game.png" alt="Data Analytics" class="img-fluid">
+                                    <div class="image-overlay">
+                                        <div class="tech-stack">
+                                            <span class="tech-badge">Power BI</span>
+                                            <span class="tech-badge">Tableau</span>
+                                            <span class="tech-badge">Python</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="solution-details">
+                                    <h3>Data Analytics & Business Intelligence</h3>
+                                    <p>Transform your raw data into actionable insights with our comprehensive analytics solutions. We help businesses make data-driven decisions through advanced analytics and visualization.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Data Visualization</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Predictive Analytics</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>Real-time Dashboards</span>
+                                        </div>
+                                    </div>
+                                    <div class="cta-section">
+                                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                        <a href="portfolio.html" class="btn btn-outline">View Projects</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-           
-           
         </div>
     </section>
 
@@ -348,6 +974,161 @@
 
     <script src="assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/js/all.min.js"></script>
+    
+    <!-- Modern Solutions Interactive Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize solutions navigation
+            initSolutionsNavigation();
+            
+            // Initialize AOS if available
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+        
+        function initSolutionsNavigation() {
+            const navItems = document.querySelectorAll('.solution-nav-item');
+            const contentItems = document.querySelectorAll('.solution-content-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    const bgColor = this.getAttribute('data-bg');
+                    
+                    // Remove active class from all nav items
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Hide all content items
+                    contentItems.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Show target content with delay for smooth transition
+                    setTimeout(() => {
+                        const targetContent = document.getElementById(target);
+                        if (targetContent) {
+                            targetContent.classList.add('active');
+                        }
+                    }, 200);
+                    
+                    // Add ripple effect
+                    createRipple(this, event);
+                });
+                
+                // Add hover effects
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(15px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateX(0) scale(1)';
+                    } else {
+                        this.style.transform = 'translateX(10px) scale(1)';
+                    }
+                });
+            });
+            
+            // Auto-cycle through solutions (optional)
+            // startAutoRotation();
+        }
+        
+        function createRipple(element, event) {
+            const ripple = document.createElement('div');
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                pointer-events: none;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                z-index: 1;
+            `;
+            
+            element.style.position = 'relative';
+            element.appendChild(ripple);
+            
+            // Add ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(2);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+        
+        function startAutoRotation() {
+            const navItems = document.querySelectorAll('.solution-nav-item');
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % navItems.length;
+                navItems[currentIndex].click();
+            }, 5000); // Rotate every 5 seconds
+        }
+        
+        // Add scroll animations
+        function animateOnScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.solution-nav-item, .solution-content-item').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Initialize scroll animations
+        animateOnScroll();
+        
+        // Add smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add loading states
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+    
     <script type="text/javascript">
 
         //====== counter up 
