@@ -210,16 +210,16 @@
                   <div class="row">
                     <div class="col-lg-12">
                         <div class="contract-form-wrapper">
-                            <form action="#" class="contact-form">
+                            <form action="mailto:info@cloudproductionltd.com?subject=Contact%20Form%20Submission" method="GET" class="contact-form">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="your-name" class="form-control" id="" aria-describedby="" placeholder="Your Name">
+                                            <input type="text" name="Name" class="form-control" id="" aria-describedby="" placeholder="Your Name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="last-name" class="form-control" id="" aria-describedby="" placeholder="Last Name">
+                                            <input type="text" name="LastName" class="form-control" id="" aria-describedby="" placeholder="Last Name" required>
                                         </div>
                                     </div>
                                 </div>
@@ -227,12 +227,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="company-name" class="form-control" id="" aria-describedby="" placeholder="Company Name">
+                                            <input type="text" name="Company" class="form-control" id="" aria-describedby="" placeholder="Company Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="email" class="form-control" id="" aria-describedby="" placeholder="Your Email">
+                                            <input type="email" name="Email" class="form-control" id="" aria-describedby="" placeholder="Your Email" required>
                                         </div>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select namer="Service" class="form-select" aria-label="Service">
+                                            <select name="Service" class="form-select" aria-label="Service" required>
                                                 <option selected>Service</option>
                                                 <option value="1">Custom Software</option>
                                                 <option value="2">Desktop Application</option>
@@ -254,7 +254,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select namer="Service" class="form-select" aria-label="Budget">
+                                            <select name="Budget" class="form-select" aria-label="Budget" required>
                                                 <option selected>Budget</option>
                                                 <option value="1">Consultation Free</option>
                                                 <option value="2">$1K-$5K</option>
@@ -268,7 +268,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea  placeholder="Tell us more about idea!" class="form-control" Name=""id="exampleFormControlTextarea1" rows="3"></textarea>                                       
+                                            <textarea  placeholder="Tell us more about idea!" class="form-control" name="Message" id="exampleFormControlTextarea1" rows="3" required></textarea>                                       
                                         </div>
                                     </div>    
                                     
