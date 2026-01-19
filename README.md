@@ -36,3 +36,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 # cpl-website
+
+
+## quick running 
+docker pull asif449/cpl-website:15 && \
+docker rm -f cloudproduction-app && \
+docker run -d --name cloudproduction-app -p 3000:3000 --restart unless-stopped asif449/cpl-website:15

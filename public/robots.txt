@@ -1,0 +1,8 @@
+# robots.txt for Cloud Production LTD
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://cloudproductionltd.com/sitemap.xml
