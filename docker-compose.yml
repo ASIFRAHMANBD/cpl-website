@@ -1,12 +1,26 @@
 services:
   app:
-    image: asif449/cpl-website:9
+    image: asif449/cpl-website:18
     container_name: cloudproduction-app
     restart: unless-stopped
     environment:
       - NODE_ENV=production
       - PORT=3000
       - HOST=0.0.0.0
+      - NODE_OPTIONS=--max-old-space-size=512
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid
     expose:
       - "3000"
     networks:

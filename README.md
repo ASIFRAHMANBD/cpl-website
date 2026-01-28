@@ -38,7 +38,30 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # cpl-website
 
 
+
+## build and push command 
+docker buildx build --platform linux/amd64 -t asif449/cpl-website:17 . --push
+
 ## quick running 
-docker pull asif449/cpl-website:15 && \
+docker pull asif449/cpl-website:17 && \
 docker rm -f cloudproduction-app && \
-docker run -d --name cloudproduction-app -p 3000:3000 --restart unless-stopped asif449/cpl-website:15
+docker run -d --name cloudproduction-app -p 3000:3000 --restart unless-stopped asif449/cpl-website:17
+
+
+
+
+
+docker run -d \
+  --name cloudproduction-app \
+  -p 3000:3000 \
+  --memory=512M \
+  --cpus=0.5 \
+  --security-opt no-new-privileges \
+  --read-only \
+  --tmpfs /tmp:rw,noexec,nosuid \
+  -e NODE_ENV=production \
+  -e PORT=3000 \
+  -e HOST=0.0.0.0 \
+  -e NODE_OPTIONS="--max-old-space-size=512 --max-http-header-size=16384" \
+  -e NEXT_TELEMETRY_DISABLED=1 \
+  asif449/cpl-website:18
