@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  generateBuildId: async () => {
+    return `build-${Date.now()}`
+  },
   output: 'standalone',
   
   // Image optimization settings
@@ -102,6 +105,15 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizePackageImports: ['@fortawesome/fontawesome-free'],
+    serverActions: {
+      allowedOrigins: [
+        'cloudproductionltd.com', 
+        'www.cloudproductionltd.com', 
+        '148.163.100.219:3000',
+        '148.163.100.219'
+      ],
+      bodySizeLimit: '2mb',
+    },
   },
   
   async rewrites() {

@@ -43,9 +43,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 docker buildx build --platform linux/amd64 -t asif449/cpl-website:17 . --push
 
 ## quick running 
-docker pull asif449/cpl-website:17 && \
-docker rm -f cloudproduction-app && \
-docker run -d --name cloudproduction-app -p 3000:3000 --restart unless-stopped asif449/cpl-website:17
+docker stop cloudproduction-app || true && \
+docker rm -f cloudproduction-app || true && \
+docker pull asif449/cpl-website:20 && \
+docker run -d --name cloudproduction-app -p 3000:3000 --restart unless-stopped -v nextjs_cache:/app/.next/cache asif449/cpl-website:20
 
 
 
@@ -54,8 +55,8 @@ docker run -d --name cloudproduction-app -p 3000:3000 --restart unless-stopped a
 docker run -d \
   --name cloudproduction-app \
   -p 3000:3000 \
-  --memory=512M \
-  --cpus=0.5 \
+  --memory=1024M \
+  --cpus=1.0 \
   --security-opt no-new-privileges \
   --read-only \
   --tmpfs /tmp:rw,noexec,nosuid \
