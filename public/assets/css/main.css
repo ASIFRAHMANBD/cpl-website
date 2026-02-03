@@ -1,5 +1,39 @@
+/* Global Fonts */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #444;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
 
+/* Hero Section Spacing */
+.hero-area {
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+@media (max-width: 768px) {
+    .hero-area {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+}
 
+/* Typography Enhancements */
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* Existing Portfolio Styles */
 .portfolio .portfolio-item .isotope-item-content .portfolio-info {
     opacity: 0;
     position: absolute;
