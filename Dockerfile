@@ -36,14 +36,19 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup && \
     chown -R appuser:appgroup /app
 
 # Only copy production artifacts
-COPY --from=builder --chown=appuser:appgroup /app/.next ./.next
 COPY --from=builder --chown=appuser:appgroup /app/public ./public
-COPY --from=builder --chown=appuser:appgroup /app/package.json ./package.json
-COPY --from=deps --chown=appuser:appgroup /app/node_modules ./node_modules
+
+# Set the correct permission for prerender cache
+mkdir .next
+chown appuser:appgroup .next
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=appuser:appgroup /app/.next/standalone ./
+COPY --from=builder --chown=appuser:appgroup /app/.next/static ./.next/static
 
 # Set proper permissions and security hardening
 RUN chmod -R 755 /app && \
-    chmod -R 755 /app/.next && \
     # Additional security hardening
     find /app -type f -name "*.js" -exec chmod 644 {} \; && \
     find /app -type f -name "*.json" -exec chmod 644 {} \; && \
@@ -59,5 +64,5 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 EXPOSE 3000
 USER appuser
-CMD ["npm", "run", "start"]
+CMD ["node", "server.js"]
 
