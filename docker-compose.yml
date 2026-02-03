@@ -1,6 +1,6 @@
 services:
   app:
-    image: asif449/cpl-website:18
+    image: asif449/cpl-website:22
     container_name: cloudproduction-app
     restart: unless-stopped
     environment:

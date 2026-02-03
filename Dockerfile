@@ -39,8 +39,8 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup && \
 COPY --from=builder --chown=appuser:appgroup /app/public ./public
 
 # Set the correct permission for prerender cache
-mkdir .next
-chown appuser:appgroup .next
+RUN mkdir .next && \
+    chown appuser:appgroup .next
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
